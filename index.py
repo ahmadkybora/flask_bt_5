@@ -1,13 +1,5 @@
 from telegram.ext import Updater, CallbackContext, CommandHandler, MessageHandler, Filters
-from telegram import (
-    Update, 
-    InlineKeyboardMarkup, 
-    InlineKeyboardButton, 
-    ReplyKeyboardMarkup, 
-    ReplyKeyboardRemove, 
-    KeyboardButton, 
-    InputInvoiceMessageContent
-)
+from telegram import Update, InlineKeyboardButton
 from decouple import config
 
 token = config("TOKEN")

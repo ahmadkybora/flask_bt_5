@@ -4,4 +4,3 @@ tornado>=5.1
 cryptography
 python-telegram-bot
 decouple
-decouple-python

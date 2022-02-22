@@ -1,10 +1,13 @@
 from telegram.ext import Updater, CallbackContext, CommandHandler, MessageHandler, Filters
 from telegram import Update, InlineKeyboardButton
 from decouple import config
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 
-# token = config("TOKEN")
-
+logger = logging.getLogger(__name__)
 token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
+# token = config("TOKEN")
 
 def start(update: Update, context: CallbackContext):
     keyboards = [
@@ -21,7 +24,7 @@ def getVoice(update: Updater, context: CallbackContext):
 
 
 def main():
-    updater = Updater(token)
+    updater = Updater(token, use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(MessageHandler(Filters.text, start))

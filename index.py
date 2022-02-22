@@ -2,8 +2,9 @@ from telegram.ext import Updater, CallbackContext, CommandHandler, MessageHandle
 from telegram import Update, InlineKeyboardButton
 from decouple import config
 
-token = config("TOKEN")
+# token = config("TOKEN")
 
+token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 
 def start(update: Update, context: CallbackContext):
     keyboards = [
@@ -13,7 +14,7 @@ def start(update: Update, context: CallbackContext):
         [InlineKeyboardButton('7', callback_data='salam_7'), InlineKeyboardButton('8', callback_data='salam_8')], 
     ]
 
-    update.effective_message.reply_text('', reply_markup=keyboards)
+    update.effective_message.reply_text('ss', reply_markup=keyboards)
 
 def getVoice(update: Updater, context: CallbackContext):
     file = update.bot.get_file().download()

@@ -25,7 +25,8 @@ token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 
 def getFile(update: Update, context: CallbackContext):
     text = update.message.text
-    file = context.bot.send_document(update.effective_chat.id, text)
+    # file = context.bot.send_document(update.effective_chat.id, text)
+    file = context.bot.send_video(chat_id=update.message.chat_id, video=open(text, 'rb'), supports_streaming=True)
     context.bot.sendMessage(file)
 
 def main():

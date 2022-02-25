@@ -26,7 +26,8 @@ token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 def getFile(update: Update, context: CallbackContext):
     text = update.message.text
     # file = context.bot.send_document(update.effective_chat.id, text)
-    file = context.bot.send_video(update.effective_chat.id, text)
+    #file = context.bot.send_video(update.effective_chat.id, text)
+    file = context.bot.sendPhoto(update.effective_chat.id, "https://fr.dreamstime.com/photo-stock-paysage-panoramique-d-automne-courant-for%C3%AAt-backg-nature-chute-image79856609")
     context.bot.sendMessage(file)
 
 def main():

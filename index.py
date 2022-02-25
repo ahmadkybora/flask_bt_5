@@ -25,9 +25,8 @@ token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 
 def getFile(update: Update, context: CallbackContext):
     text = update.message.text
-    update.message.reply_text(text)
-    # file = context.bot.sendDocument(update.effective_chat.id, text)
-    # update.message.reply_text(file)
+    file = context.bot.sendDocument(update.effective_chat.id, text)
+    context.bot.sendMessage(file)
 
 def main():
     updater = Updater(token, use_context=True)

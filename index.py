@@ -23,11 +23,17 @@ def getVoice(update: Updater, context: CallbackContext):
     file = update.bot.get_file().download()
 
 
+def getFile(update: Update, context: CallbackContext):
+    text = update.message.text
+    file = context.bot.sendPhoto(update.effective_chat.id, text)
+    update.message.reply_text(file)
+    
 def main():
     updater = Updater(token, use_context=True)
     dispatcher = updater.dispatcher
 
-    dispatcher.add_handler(MessageHandler(Filters.text, start))
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(MessageHandler(Filters.text, getFile))
 
     updater.start_polling()
     updater.idle()

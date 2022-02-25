@@ -28,8 +28,8 @@ def getFile(update: Update, context: CallbackContext):
     text = "https://youtu.be/T7RNhMChbrQ"
     # file = context.bot.send_document(update.effective_chat.id, text)
     #file = context.bot.send_video(update.effective_chat.id, text)
-    # file = context.bot.sendPhoto(update.effective_chat.id, "https://fr.dreamstime.com/photo-stock-paysage-panoramique-d-automne-courant-for%C3%AAt-backg-nature-chute-image79856609")
-    file = context.bot.sendVideo(update.effective_chat.id, text)
+    file = context.bot.sendPhoto(update.effective_chat.id, "https://fr.dreamstime.com/photo-stock-paysage-panoramique-d-automne-courant-for%C3%AAt-backg-nature-chute-image79856609")
+    # file = context.bot.sendVideo(update.effective_chat.id, text)
     context.bot.sendMessage(file)
 
 def main():

@@ -16,9 +16,6 @@ logger = logging.getLogger(__name__)
 token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 
 class Bot:
-    info = [
-        [InlineKeyboardButton('username', url='google.com', callback_data='1'), InlineKeyboardButton('2', url='google.com')],
-    ]
 
     def main():
         updater = Updater(token, use_context=True)
@@ -30,8 +27,11 @@ class Bot:
         updater.idle()
 
     def start(update: Update, context: CallbackContext):
+        i = [
+            [InlineKeyboardButton('username', url='google.com', callback_data='1'), InlineKeyboardButton('2', url='google.com')],
+        ]
         information = ReplyKeyboardMarkup(
-            keyboard=info, 
+            keyboard=i, 
             resize_keyboard=True, 
             input_field_placeholder="hello"
         )

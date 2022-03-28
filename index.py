@@ -43,8 +43,8 @@ def main():
     dispatcher = updater.dispatcher
 
     # dispatcher.add_handler(CommandHandler("start", start))
-    # dispatcher.add_handler(MessageHandler(Filters.text, getFile))
-    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(MessageHandler(Filters.text, start))
+    # dispatcher.add_handler(CommandHandler("start", start))
     updater.start_polling()
     updater.idle()
 

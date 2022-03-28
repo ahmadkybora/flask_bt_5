@@ -36,8 +36,7 @@ token = "2016260844:AAGwWwI6ZLA7cLUNNcAbbFz2W84wkJebZyo"
 #     context.bot.sendMessage(file)
 
 def start(update: Update, context: CallbackContext):
-    chat_id = update.effective_chat.id
-    context.bot.send_message(chat_id, 'hello')
+    update.message.reply_text('h')
 
 def main():
     updater = Updater(token, use_context=True)
